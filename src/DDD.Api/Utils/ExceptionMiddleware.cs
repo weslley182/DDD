@@ -19,7 +19,7 @@ public class ExceptionMiddleware
         {
             await _next(httpContext);
         }
-        catch (Domain.Exceptions.ApplicationException ex)
+        catch (Application.Exceptions.ApplicationException ex)
         {
             await HandleExceptionAsync(httpContext, ex.HttpStatus, ex, ex.InnerException);
         }

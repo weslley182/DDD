@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace DDD.Domain.Exceptions;
+namespace DDD.Application.Exceptions;
 
 [Serializable]
 public abstract class ApplicationException : Exception
