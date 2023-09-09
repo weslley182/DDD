@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -10,9 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bogus" Version="34.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="NSubstitute" Version="5.0.0" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
@@ -27,16 +26,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\DDD.Api\DDD.Api.csproj" />
-    <ProjectReference Include="..\..\src\DDD.Application\DDD.Application.csproj" />
-    <ProjectReference Include="..\..\src\DDD.Domain\DDD.Domain.csproj" />
-    <ProjectReference Include="..\..\src\DDD.Infrastructure\DDD.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Application\" />
-    <Folder Include="Infrastructure\" />
-    <Folder Include="Domain\" />
-    <Folder Include="Domain.Service\" />
   </ItemGroup>
 
 </Project>

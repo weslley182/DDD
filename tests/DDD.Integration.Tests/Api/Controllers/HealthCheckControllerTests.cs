@@ -3,7 +3,7 @@ using System.Net;
 using System.Text.Json;
 using Xunit;
 
-namespace DDD.Tests.Api.Controllers;
+namespace DDD.Integration.Tests.Api.Controllers;
 
 public class HealthCheckControllerIntegrationTests : IClassFixture<WebApplicationFactory<Program>>
 {
