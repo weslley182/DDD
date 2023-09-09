@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -36,6 +36,7 @@
     <Folder Include="Application\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Domain\" />
+    <Folder Include="Domain.Service\" />
   </ItemGroup>
 
 </Project>

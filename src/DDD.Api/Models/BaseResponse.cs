@@ -13,5 +13,5 @@ public class BaseResponse
 
     public long Status { get; set; }
 
-    public string[] Errors { get; set; }
+    public string[]? Errors { get; set; }
 }
