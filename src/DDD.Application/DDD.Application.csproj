@@ -12,7 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Folder Include="CQRS\Command\" />
+    <Folder Include="CQRS\Handlers\" />
+    <Folder Include="CQRS\Queries\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="Mappings\" />
+    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
 
 </Project>

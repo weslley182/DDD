@@ -27,8 +27,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\DDD.Application\DDD.Application.csproj" />
+    <ProjectReference Include="..\..\src\DDD.Domain.Services\DDD.Domain.Services.csproj" />
     <ProjectReference Include="..\..\src\DDD.Domain\DDD.Domain.csproj" />
-    <ProjectReference Include="..\..\src\DDD.Infrastructure\DDD.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\DDD.Infrastructure.Data\DDD.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\..\src\DDD.Infrastructure.IoC\DDD.Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\..\src\DDD.Infrastructure\DDD.Infrastructure.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
