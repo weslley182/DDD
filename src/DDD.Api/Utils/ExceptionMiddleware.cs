@@ -36,7 +36,7 @@ public class ExceptionMiddleware
         {
             Title = statusCode.ToString(),
             Error = ex.Message,
-            Detail = string.Format("{0} {1}", ex.StackTrace, innerException?.Message),
+            Detail = string.Format("{Trace} {Message}", ex.StackTrace, innerException?.Message),
             Instance = httpContext.Request.Path
         };
 
