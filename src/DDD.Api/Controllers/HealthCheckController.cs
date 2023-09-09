@@ -18,6 +18,7 @@ public class HealthCheckController : ControllerBase
     [HttpGet]
     public IActionResult Get()
     {
+        throw new Exception("Teste");
         _logger.LogInformation("Health check");
         return Ok("Healthy");
     }
