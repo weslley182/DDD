@@ -30,7 +30,7 @@ public class HealthCheckControllerIntegrationTests : IClassFixture<WebApplicatio
         Assert.Equal("Healthy", deserializedContent);
     }
 
-    //[Fact(Skip = "somente teste de esceção")]
+    //[Fact(Skip = "somente teste de exceção")]
     [Fact]
     public async Task HealthCheck_ReturnsExceptionWhenErrorRouteIsAccessed()
     {
