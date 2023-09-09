@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DDD.Application\DDD.Application.csproj" />
+    <ProjectReference Include="..\DDD.Infrastructure.IoC\DDD.Infrastructure.IoC.csproj" />
   </ItemGroup>
 
   <ItemGroup>
