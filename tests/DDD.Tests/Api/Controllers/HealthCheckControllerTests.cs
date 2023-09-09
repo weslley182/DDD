@@ -29,4 +29,34 @@ public class HealthCheckControllerIntegrationTests : IClassFixture<WebApplicatio
         var deserializedContent = JsonSerializer.Deserialize<string>(content);
         Assert.Equal("Healthy", deserializedContent);
     }
+
+    //[Fact(Skip = "somente teste de esceção")]
+    [Fact]
+    public async Task HealthCheck_ReturnsExceptionWhenErrorRouteIsAccessed()
+    {
+        // Arrange
+        var requestUri = "api/healthcheck/error";
+
+        // Act & Assert
+        await Assert.ThrowsAsync<HttpRequestException>(async () =>
+        {
+            var response = await _client.GetAsync(requestUri);
+            response.EnsureSuccessStatusCode();
+        });
+    }
+
+    [Fact]
+    public async Task HealthCheck_ReturnsExceptionWhenServerIsNotRunning()
+    {
+        // Arrange
+        var requestUri = "api/healthcheck"; // Suponhamos que esta seja a rota que você deseja testar.
+        var client = new HttpClient();
+
+        // Act & Assert
+        await Assert.ThrowsAsync<InvalidOperationException>(async () =>
+        {
+            var response = await client.GetAsync(requestUri);
+            response.EnsureSuccessStatusCode();
+        });
+    }
 }
