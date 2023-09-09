@@ -1,4 +1,5 @@
 ﻿using DDD.Api.Models;
+using DDD.Application.Exceptions;
 using Newtonsoft.Json;
 using System.Net;
 
@@ -19,7 +20,7 @@ public class ExceptionMiddleware
         {
             await _next(httpContext);
         }
-        catch (Application.Exceptions.ApplicationException ex)
+        catch (ApplicationBusinessException ex)
         {
             await HandleExceptionAsync(httpContext, ex.HttpStatus, ex, ex.InnerException);
         }
