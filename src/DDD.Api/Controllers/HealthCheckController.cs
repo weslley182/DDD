@@ -15,7 +15,7 @@ public class HealthCheckController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet]
+    [HttpGet("")]
     public IActionResult Get()
     {
         _logger.LogInformation("Health check");

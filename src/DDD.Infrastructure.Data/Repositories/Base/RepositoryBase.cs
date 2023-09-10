@@ -1,5 +1,5 @@
 ﻿using DDD.Domain.Base;
-using DDD.Domain.Services.Repositories.Base;
+using DDD.Domain.Services.Repositories.Interfaces.Base;
 using DDD.Infrastructure.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;

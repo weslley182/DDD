@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace DDD.Domain.Services.Repositories.Base;
+namespace DDD.Domain.Services.Repositories.Interfaces.Base;
 
 public interface IRepositoryBase<TEntity, TId>
       where TEntity : class

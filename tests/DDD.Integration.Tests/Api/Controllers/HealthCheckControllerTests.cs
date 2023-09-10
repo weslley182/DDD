@@ -8,6 +8,7 @@ namespace DDD.Integration.Tests.Api.Controllers;
 public class HealthCheckControllerIntegrationTests : IClassFixture<WebApplicationFactory<Program>>
 {
     private readonly HttpClient _client;
+    private const string REQUEST_URI = "api/healthcheck";
 
     public HealthCheckControllerIntegrationTests(WebApplicationFactory<Program> factory)
     {
@@ -17,11 +18,8 @@ public class HealthCheckControllerIntegrationTests : IClassFixture<WebApplicatio
     [Fact]
     public async Task HealthCheck_ReturnsHealthyStatus()
     {
-        // Arrange
-        var requestUri = "api/healthcheck";
-
         // Act
-        var response = await _client.GetAsync(requestUri);
+        var response = await _client.GetAsync(REQUEST_URI);
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -35,7 +33,7 @@ public class HealthCheckControllerIntegrationTests : IClassFixture<WebApplicatio
     public async Task HealthCheck_ReturnsExceptionWhenErrorRouteIsAccessed()
     {
         // Arrange
-        var requestUri = "api/healthcheck/error";
+        var requestUri = REQUEST_URI + "/error";
 
         // Act & Assert
         await Assert.ThrowsAsync<HttpRequestException>(async () =>
@@ -48,14 +46,12 @@ public class HealthCheckControllerIntegrationTests : IClassFixture<WebApplicatio
     [Fact]
     public async Task HealthCheck_ReturnsExceptionWhenServerIsNotRunning()
     {
-        // Arrange
-        var requestUri = "api/healthcheck"; // Suponhamos que esta seja a rota que você deseja testar.
         var client = new HttpClient();
 
         // Act & Assert
         await Assert.ThrowsAsync<InvalidOperationException>(async () =>
         {
-            var response = await client.GetAsync(requestUri);
+            var response = await client.GetAsync(REQUEST_URI);
             response.EnsureSuccessStatusCode();
         });
     }
