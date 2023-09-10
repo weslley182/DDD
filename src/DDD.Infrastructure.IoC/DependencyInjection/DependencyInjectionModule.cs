@@ -19,12 +19,10 @@ public static class DependencyInjectionModule
         //useCases
 
         //Services
-        services.AddTransient<IProductService, ProductService>();
+        services.AddTransient<IEmailService, EmailService>();
 
         //libs
         services.AddAutoMapper(typeof(DomainMapperProfile));
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
-
-
     }
 }

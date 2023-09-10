@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using DDD.Application.CQRS.Products.Command;
+using DDD.Application.Dtos;
+using DDD.Domain.Entities;
 
 namespace DDD.Application.Mappings;
 
@@ -6,7 +9,8 @@ public class DomainMapperProfile : Profile
 {
     public DomainMapperProfile()
     {
-        CreateMap<Domain.Entities.Product, Dtos.ProductResponse>().ReverseMap();
-        CreateMap<Dtos.ProductRequest, Domain.Entities.Product>().ReverseMap();
+        CreateMap<Product, ProductResponse>().ReverseMap();
+        CreateMap<ProductRequest, Product>().ReverseMap();
+        CreateMap<ProductCreateCommad, Product>().ReverseMap();
     }
 }
