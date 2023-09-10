@@ -1,4 +1,5 @@
-﻿using DDD.Application.Services;
+﻿using DDD.Application.Mappings;
+using DDD.Application.Services;
 using DDD.Application.Services.Interfaces;
 using DDD.Domain.Services.Repositories.Interfaces;
 using DDD.Infrastructure.Data.Repositories;
@@ -16,8 +17,13 @@ public static class DependencyInjectionModule
         services.AddScoped<IProductRepository, ProductRepository>();
 
         //useCases
+
         //Services
         services.AddTransient<IProductService, ProductService>();
+
+        //libs
+        services.AddAutoMapper(typeof(DomainMapperProfile));
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
 
     }
