@@ -1,1 +1,1 @@
-#Sample Clea Archtecture project with DDD aspects
+# Sample Clean Architecture project with DDD aspects
