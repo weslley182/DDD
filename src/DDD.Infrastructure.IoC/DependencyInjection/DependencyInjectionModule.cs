@@ -1,4 +1,6 @@
-﻿using DDD.Domain.Services.Repositories.Interfaces;
+﻿using DDD.Application.Services;
+using DDD.Application.Services.Interfaces;
+using DDD.Domain.Services.Repositories.Interfaces;
 using DDD.Infrastructure.Data.Repositories;
 using DDD.Infrastructure.IoC.Config;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +16,8 @@ public static class DependencyInjectionModule
         services.AddScoped<IProductRepository, ProductRepository>();
 
         //useCases
+        //Services
+        services.AddTransient<IProductService, ProductService>();
 
 
     }

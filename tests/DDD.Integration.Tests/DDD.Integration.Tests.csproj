@@ -26,4 +26,8 @@
     <ProjectReference Include="..\..\src\DDD.Api\DDD.Api.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Api\Controllers\V1\" />
+  </ItemGroup>
+
 </Project>

@@ -15,9 +15,10 @@
     <Folder Include="CQRS\Command\" />
     <Folder Include="CQRS\Handlers\" />
     <Folder Include="CQRS\Queries\" />
-    <Folder Include="Dtos\" />
-    <Folder Include="Mappings\" />
-    <Folder Include="Services\Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
   </ItemGroup>
 
 </Project>
