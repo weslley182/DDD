@@ -1,6 +1,8 @@
 ﻿using DDD.Application.Mappings;
 using DDD.Application.Services;
 using DDD.Application.Services.Interfaces;
+using DDD.Application.UseCase;
+using DDD.Application.UseCase.Interface;
 using DDD.Domain.Services.Repositories.Interfaces;
 using DDD.Infrastructure.Data.Repositories;
 using DDD.Infrastructure.IoC.Config;
@@ -17,9 +19,10 @@ public static class DependencyInjectionModule
         services.AddScoped<IProductRepository, ProductRepository>();
 
         //useCases
+        services.AddScoped<IProductUseCase, ProductUseCase>();
 
         //Services
-        services.AddTransient<IEmailService, EmailService>();
+        services.AddSingleton<IEmailService, EmailService>();
 
         //libs
         services.AddAutoMapper(typeof(DomainMapperProfile));

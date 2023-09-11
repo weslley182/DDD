@@ -5,14 +5,14 @@ using MediatR;
 
 namespace DDD.Application.CQRS.Products.Handlers;
 
-public class ProductAllQueryHandler : IRequestHandler<ProductAllQuery, IEnumerable<Product>>
+public class ProductGetAllQueryHandler : IRequestHandler<ProductGetAllQuery, IEnumerable<Product>>
 {
     private readonly IProductRepository _repo;
-    public ProductAllQueryHandler(IProductRepository repo)
+    public ProductGetAllQueryHandler(IProductRepository repo)
     {
         _repo = repo;
     }
-    public async Task<IEnumerable<Product>> Handle(ProductAllQuery request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<Product>> Handle(ProductGetAllQuery request, CancellationToken cancellationToken)
     {
         return await _repo.GetAllAsync();
     }

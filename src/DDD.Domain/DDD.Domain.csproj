@@ -12,8 +12,4 @@
     <None Remove="NewFolder\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCase\" />
-  </ItemGroup>
-
 </Project>
