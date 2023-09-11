@@ -12,8 +12,8 @@ public class ProductAllQueryHandler : IRequestHandler<ProductAllQuery, IEnumerab
     {
         _repo = repo;
     }
-    public Task<IEnumerable<Product>> Handle(ProductAllQuery request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<Product>> Handle(ProductAllQuery request, CancellationToken cancellationToken)
     {
-        return (Task<IEnumerable<Product>>)_repo.ToListEntity().ToList().Select(prod => prod);
+        return await _repo.GetAllAsync();
     }
 }
